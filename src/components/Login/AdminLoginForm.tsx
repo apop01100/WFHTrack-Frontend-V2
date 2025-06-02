@@ -45,7 +45,7 @@ const AdminLoginForm = () => {
                 <Form className="flex flex-col gap-8">
                     <div className="flex flex-col gap-4">
                         <EntryInput label="Username" id="username" name="username" placeholder="Input your username..."/>
-                        <EntryInput label="Password" id="password" name="password" placeholder="Input your password..."/>
+                        <EntryInput label="Password" id="password" name="password" placeholder="Input your password..." type="password"/>
                     </div>
 
                     <button className="text-neutral-50 bg-blue-500" type="submit" disabled={isSubmitting}>

@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# 💻 WFHTrack Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for **WFHTrack**, built with React and TypeScript. It allows users to mark their attendance and lets admins monitor attendance data through an intuitive dashboard.
 
-Currently, two official plugins are available:
+## 🛠 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React.js** with **TypeScript**
+- **React Router DOM** for routing
+- **Tailwind CSS**
+- **Vite** for development environment
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Login for users and admins
+- User dashboard for attendance submission
+- Admin dashboard for viewing and managing attendance
+- Role-based UI rendering
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📁 Project Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/apop01100/WFHTracker-frontend.git
+cd WFHTracker-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Install Dependencies
+
+Create a .env file in the root folder:
+
+```bash
+VITE_API_URL=https://alleged-delores-apop01100-8802d13b.koyeb.app/api/v1
+VITE_UNSIGNED_PRESET=input_your_unsigned_preset_cloudinary
+VITE_CLOUD_NAME=input_your_cloud_name_cloudinary
+```
+
+### 4. Run Developement Server
+
+```bash
+npm run dev
+```
+
+## 🔐 Role Overview
+
+| Role | Access |
+|-------|---------------------------------------------------------|
+| User | Login & submit daily attendance |
+| Admin | View all users, track attendance, and manage the system |

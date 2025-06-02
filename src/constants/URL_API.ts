@@ -1,0 +1,16 @@
+const API_URL = import.meta.env.VITE_API_URL
+export const API_USER_LOGIN = `${API_URL}/users/login`
+export const API_ADMIN_LOGIN = `${API_URL}/admin/login`
+export const API_USER_ATTENDANCES = `${API_URL}/users/attendances`
+export const API_USER_MARK_ATTENDANCE = `${API_URL}/attendance/mark`
+export const API_GET_ALL_USER = `${API_URL}/users`
+export const API_LIST_ATTENDANCES = `${API_URL}/attendance`
+export const API_ME = `${API_URL}/me`
+export const API_DELETE_USER = `${API_URL}/admin/user`
+export const API_UPDATE_USER = `${API_URL}/admin/user`
+export const API_UPDATE_USER_FOR_USER = `${API_URL}/users`
+export const API_GET_ALL_POSITIONS = `${API_URL}/positions`
+export const API_CREATE_USER = `${API_URL}/users`
+export const API_GET_ADMIN_PROFILE = `${API_URL}/admin`
+export const API_GET_USER_PROFILE = `${API_URL}/users/profile`
+export const API_LOGOUT = `${API_URL}/logout`

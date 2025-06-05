@@ -6,13 +6,14 @@ import AttendanceImageDialog from "./AttendanceImageDialog";
 
 interface PresentAttendanceProps {
   onUploadSuccess: (url: string) => void;
+  updateData: () => void;
 }
 
 interface PresentAttendanceResponse {
     messages: string
 }
 
-const PresentAttendance: React.FC<PresentAttendanceProps> = ({ onUploadSuccess }) => {
+const PresentAttendance: React.FC<PresentAttendanceProps> = ({ onUploadSuccess, updateData }) => {
     const [isUploading, setIsUploading] = useState(false);
     const [imageUrl, setImageUrl] = useState<string>("");
     const [error, setError] = useState<string | null>(null);
@@ -51,6 +52,7 @@ const PresentAttendance: React.FC<PresentAttendanceProps> = ({ onUploadSuccess }
 
     const markAttendance = async (imageUrl: string) => {
         await fetchData({ img_url: imageUrl })
+        updateData();
         setImageUrl("");
     }
 

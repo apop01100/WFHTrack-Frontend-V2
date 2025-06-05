@@ -79,7 +79,7 @@ const PersonalAttendanceTable = () => {
         <h2 className="text-2xl font-semibold">
           Yours Attendance
         </h2>
-        <PresentAttendance onUploadSuccess={setImageUrl}/>
+        <PresentAttendance onUploadSuccess={setImageUrl} updateData={fetchData}/>
       </div>
         {
           data && <Table data={data} columns={userColumns}/>

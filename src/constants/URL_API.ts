@@ -14,3 +14,4 @@ export const API_CREATE_USER = `${API_URL}/users`
 export const API_GET_ADMIN_PROFILE = `${API_URL}/admin`
 export const API_GET_USER_PROFILE = `${API_URL}/users/profile`
 export const API_LOGOUT = `${API_URL}/logout`
+export const API_CREATE_ATTENDANCE = `${API_URL}/attendance`

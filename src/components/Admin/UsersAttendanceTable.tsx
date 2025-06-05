@@ -3,6 +3,7 @@ import { API_LIST_ATTENDANCES } from "../../constants/URL_API"
 import useFetch from "../../hooks/useFetch"
 import Table from "../Table"
 import ImageDialog from "../Home/ImageDialog";
+import AddAttendanceTodayButton from "./AddAttendanceTodayButton";
 
 type Column<T> = {
   header: string;
@@ -83,6 +84,7 @@ const UsersAttendanceTable = () => {
 
   return (
     <div className="bg-neutral-50 flex flex-col w-full h-full gap-4">
+        <AddAttendanceTodayButton updateData={fetchData}/>
         {
           data && <Table data={data} columns={userColumns}/>
         }

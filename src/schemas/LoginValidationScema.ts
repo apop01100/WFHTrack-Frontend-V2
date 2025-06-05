@@ -6,6 +6,8 @@ const validationLoginSchema = Yup.object({
     .required("Required"),
   password: Yup.string()
     .min(6, "Minimum 6 characters")
+    .required("Required")
+    .matches(/\d/, "Password must include at least one number")
     .required("Required"),
 });
 

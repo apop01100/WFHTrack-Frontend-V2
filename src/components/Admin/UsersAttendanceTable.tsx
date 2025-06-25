@@ -4,6 +4,7 @@ import useFetch from "../../hooks/useFetch"
 import Table from "../Table"
 import ImageDialog from "../Home/ImageDialog";
 import AddAttendanceTodayButton from "./AddAttendanceTodayButton";
+import Loading from "../Loading";
 
 type Column<T> = {
   header: string;
@@ -22,7 +23,7 @@ interface UsersAttendanceResponse {
 }
 
 const UsersAttendanceTable = () => {
-  const { data, fetchData } = useFetch<UsersAttendanceResponse[]>(`${API_LIST_ATTENDANCES}?limit=10&page=1`);
+  const { data, fetchData, loading } = useFetch<UsersAttendanceResponse[]>(`${API_LIST_ATTENDANCES}?limit=10&page=1`);
   const [open, setOpen] = useState(false);
   const [imageUrl, setImageUrl] = useState("");
 
@@ -86,7 +87,7 @@ const UsersAttendanceTable = () => {
     <div className="bg-neutral-50 flex flex-col w-full h-full gap-4">
         <AddAttendanceTodayButton updateData={fetchData}/>
         {
-          data && <Table data={data} columns={userColumns}/>
+          loading && data ? <Table data={data} columns={userColumns}/> : <Loading />
         }
 
         <ImageDialog open={open} imageUrl={imageUrl} onClose={handleClose} />

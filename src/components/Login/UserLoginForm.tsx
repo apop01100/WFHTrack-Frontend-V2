@@ -21,7 +21,7 @@ const initialValues: LoginValues = {
 }
 
 const LoginForm = () => {
-    const { data, loading, fetchData } = useFetch<LoginResponse>(API_USER_LOGIN, "POST"); 
+    const { data, error, loading, fetchData } = useFetch<LoginResponse>(API_USER_LOGIN, "POST"); 
     const navigate = useNavigate()
 
     const handleSubmit = async (values: LoginValues) => {
@@ -47,6 +47,10 @@ const LoginForm = () => {
                         <EntryInput label="Username" id="username" name="username" placeholder="Input your username..."/>
                         <EntryInput label="Password" id="password" name="password" placeholder="Input your password..." type="password"/>
                     </div>
+
+                    {
+                        error && (data ? <p className="text-red-500 text-md text-center">{data.message}</p> : <p className="text-red-500 text-md text-center">Error!</p>)
+                    }
 
                     <button className="text-neutral-50 bg-blue-500" type="submit" disabled={isSubmitting}>
                         { loading ? "Loading..." : "Login"}

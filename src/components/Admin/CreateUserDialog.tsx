@@ -60,8 +60,8 @@ const CreateUserDialog: React.FC<CreateUserDialogProps> = ({ isOpen, onClose, up
                 <EntryInput label="Last Name" id="last_name" name="last_name" placeholder="please input your last name..."/>
                 <EntryInput label="Email" id="email" name="email" placeholder="please input your email..."/>
                 <EntryInput label="Username" id="username" name="username" placeholder="please input your username..."/>
-                <EntryInput label="Password" id="password" name="password" placeholder="please input your password..."/>
-                <EntryInput label="Confirm Password" id="confirm_password" name="confirm_password" placeholder="please your confirm password..."/>
+                <EntryInput label="Password" type="password" id="password" name="password" placeholder="please input your password..."/>
+                <EntryInput label="Confirm Password" type="password" id="confirm_password" name="confirm_password" placeholder="please your confirm password..."/>
 
                 <PositionDropdown name="position" />
 

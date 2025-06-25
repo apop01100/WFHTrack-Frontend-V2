@@ -49,7 +49,7 @@ const AdminLoginForm = () => {
                     </div>
 
                     {
-                        error && (data ? <p className="text-red-500 text-md text-center">{data.message}</p> : <p className="text-red-500 text-md text-center">Error!</p>)
+                        error && data ? <p className="text-red-500 text-md text-center">{data.message}</p> : <p className="text-red-500 text-md text-center">Error!</p>
                     }
 
                     <button className="text-neutral-50 bg-blue-500" type="submit" disabled={isSubmitting}>

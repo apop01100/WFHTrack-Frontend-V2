@@ -11,7 +11,7 @@ interface AddAttendanceTodayButtonProps {
 }
 
 const AddAttendanceTodayButton: React.FC<AddAttendanceTodayButtonProps> = ({ updateData }) => {
-    const { loading, fetchData, error, data } = useFetch<AttendanceResponse>(API_CREATE_ATTENDANCE, "POST");
+    const { loading, fetchData, error } = useFetch<AttendanceResponse>(API_CREATE_ATTENDANCE, "POST");
 
     const handleButton = async () => {
         await fetchData()
@@ -24,7 +24,7 @@ const AddAttendanceTodayButton: React.FC<AddAttendanceTodayButtonProps> = ({ upd
             {loading ? "Loading..." : "+ Add Attendance Today"}
         </button>
         {
-            error && data ? <p className="text-red-500 text-md text-center">{data.error}</p> : <p className="text-red-500 text-md text-center">Error!</p>
+            error && <p className="text-red-500 text-md text-center">{error}</p>
         }
     </div>
   )

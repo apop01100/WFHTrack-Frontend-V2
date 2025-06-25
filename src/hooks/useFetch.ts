@@ -25,14 +25,16 @@ function useFetch<T>(url: string, method: string = "GET", headers: HeadersInit =
         body: body ? JSON.stringify(body) : undefined,
       });
 
+      const result = await response.json();
+
       if (!response.ok) {
+        setError(result.error || result.message || "Error")
         throw new Error(`Error: ${response.status} ${response.statusText}`);
       }
 
-      const result = await response.json();
       setData(result.data);
   } catch (err) {
-    setError((err as Error).message);
+    console.log(`${(err as Error).message}`)
   } finally {
     setLoading(false);
   }

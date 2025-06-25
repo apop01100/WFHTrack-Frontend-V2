@@ -15,7 +15,7 @@ interface WelcomeBarProps {
 }
 
 const WelcomeBar: React.FC<WelcomeBarProps> = ({...props}) => {
-  const { fetchData } = useFetch(API_LOGOUT)
+  const { fetchData } = useFetch(API_LOGOUT, "POST")
   const navigate = useNavigate();
   const [openProfile, setOpenProfile] = useState<boolean>(false)
 

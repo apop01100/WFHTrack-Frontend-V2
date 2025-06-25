@@ -4,6 +4,7 @@ import useFetch from "../../hooks/useFetch"
 import Table from "../Table"
 import ImageDialog from "./ImageDialog";
 import PresentAttendance from "./PresentAttendance";
+import Loading from "../Loading";
 
 type Column<T> = {
   header: string;
@@ -82,7 +83,7 @@ const PersonalAttendanceTable = () => {
         <PresentAttendance onUploadSuccess={setImageUrl} updateData={fetchData}/>
       </div>
         {
-          data && <Table data={data} columns={userColumns}/>
+          data ? <Table data={data} columns={userColumns}/> : <Loading />
         }
 
         <ImageDialog open={open} imageUrl={imageUrl} onClose={handleClose} />

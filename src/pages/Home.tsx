@@ -14,7 +14,7 @@ interface GetProfileResponse {
 }
 
 const Home = () => {
-  const { data, fetchData, loading } = useFetch<GetProfileResponse>(API_GET_USER_PROFILE)
+  const { data, fetchData } = useFetch<GetProfileResponse>(API_GET_USER_PROFILE)
 
   useEffect(() => {
     fetchData()
@@ -22,7 +22,7 @@ const Home = () => {
   
   return (
     <div className="flex flex-col w-full h-full gap-4 text-neutral-800">
-      {loading && data ? <WelcomeBar 
+      {data ? <WelcomeBar 
         firstName={data.first_name} 
         lastName={data.last_name}
         email={data.email} 

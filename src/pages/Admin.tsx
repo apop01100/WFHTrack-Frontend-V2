@@ -10,7 +10,7 @@ interface GetProfileResponse {
 }
 
 const Admin = () => {
-  const { data, fetchData, loading } = useFetch<GetProfileResponse>(API_GET_ADMIN_PROFILE)
+  const { data, fetchData } = useFetch<GetProfileResponse>(API_GET_ADMIN_PROFILE)
 
   useEffect(() => {
     fetchData()
@@ -18,7 +18,7 @@ const Admin = () => {
 
   return (
     <div className="flex flex-col w-full h-full gap-4 text-neutral-800">
-      {loading && data ? <WelcomeBar username={data?.username} updateData={fetchData} isUser={false}/> : <Loading />}
+      {data ? <WelcomeBar username={data?.username} updateData={fetchData} isUser={false}/> : <Loading />}
       <ControlUser />
     </div>
   )

@@ -21,7 +21,7 @@ interface UsersListResponse {
 }
 
 const UsersListTable = () => {
-  const { data, fetchData, loading } = useFetch<UsersListResponse[]>(`${API_GET_ALL_USER}?limit=10&page=1`);
+  const { data, fetchData } = useFetch<UsersListResponse[]>(`${API_GET_ALL_USER}?limit=10&page=1`);
 
   useEffect(() => {
     fetchData();
@@ -54,7 +54,7 @@ const UsersListTable = () => {
             <CreateUserButton updateTable={fetchData}/>
         </div>
         {
-            loading && data ? <Table data={data} columns={userColumns}/> : <Loading />
+            data ? <Table data={data} columns={userColumns}/> : <Loading />
         }
     </div>
   )
